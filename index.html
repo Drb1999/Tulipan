@@ -12,22 +12,13 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
 
     background:
-        radial-gradient(
-            circle at 50% 20%,
-            #fffdfb 0%,
-            #fdf6f4 45%,
-            #f8eeee 100%
-        );
+        radial-gradient(circle at 50% 20%, #fffdfb 0%, #fdf6f4 45%, #f8eeee 100%);
 
     font-family: Georgia, "Times New Roman", serif;
     color: #514541;
@@ -37,10 +28,6 @@ body {
     align-items: center;
 }
 
-/* =========================
-   CONTENEDOR
-========================= */
-
 .container {
     width: 100%;
     max-width: 900px;
@@ -48,42 +35,24 @@ body {
     text-align: center;
 }
 
-/* =========================
-   TÍTULO
-========================= */
-
 .title {
     margin: 0;
-
     font-size: clamp(28px, 6vw, 42px);
-
     font-weight: normal;
-
     color: #604a4a;
-
-    letter-spacing: 0.2px;
 }
 
 .subtitle {
     margin: 10px 0 25px;
-
     color: #9b8581;
-
     font-size: 15px;
-
-    line-height: 1.5;
 }
-
-/* =========================
-   JARDÍN
-========================= */
 
 .garden {
     position: relative;
 
     width: 100%;
     max-width: 760px;
-
     height: 420px;
 
     margin: auto;
@@ -128,10 +97,6 @@ body {
         opacity 0.5s ease;
 
     touch-action: manipulation;
-
-    -webkit-tap-highlight-color: transparent;
-
-    z-index: 5;
 }
 
 .flower:hover {
@@ -170,6 +135,8 @@ body {
     background: #78956f;
 
     border-radius: 10px;
+
+    transform-origin: bottom;
 }
 
 .leaf {
@@ -296,7 +263,7 @@ body {
 }
 
 /* =========================
-   ANIMACIÓN DE FLORES
+   INTERACCIÓN
 ========================= */
 
 .flower.touched {
@@ -333,28 +300,21 @@ body {
 
     font-size: 18px;
 
-    animation:
-        heartFloat 1.4s ease forwards;
+    animation: heartFloat 1.4s ease forwards;
 
-    z-index: 30;
+    z-index: 10;
 }
 
 @keyframes heartFloat {
 
     0% {
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(0.7);
+        transform: translateY(0) scale(0.7);
     }
 
     100% {
         opacity: 0;
-
-        transform:
-            translateY(-90px)
-            scale(1.2);
+        transform: translateY(-90px) scale(1.2);
     }
 }
 
@@ -368,25 +328,24 @@ body {
     left: 50%;
     top: 50%;
 
-    width: min(270px, 65%);
-
-    padding: 10px 10px 20px;
-
-    background: #ffffff;
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 15px 40px rgba(70, 45, 45, 0.25);
+    width: min(260px, 65%);
 
     transform:
         translate(-50%, -50%)
-        scale(0.75)
-        rotate(-2deg);
+        scale(0.7);
 
     opacity: 0;
 
     pointer-events: none;
+
+    background: white;
+
+    padding: 10px 10px 25px;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 10px 30px rgba(70, 45, 45, 0.22);
 
     transition:
         opacity 0.8s ease,
@@ -396,17 +355,14 @@ body {
 }
 
 .photo-memory.visible {
-
     opacity: 1;
 
     transform:
         translate(-50%, -50%)
-        scale(1)
-        rotate(-2deg);
+        scale(1);
 }
 
 .photo-memory img {
-
     display: block;
 
     width: 100%;
@@ -416,19 +372,14 @@ body {
     object-fit: cover;
 
     border-radius: 2px;
-
-    background: #f5f1ef;
 }
 
 .photo-caption {
-
     margin-top: 10px;
 
     color: #806c68;
 
     font-size: 14px;
-
-    line-height: 1.4;
 }
 
 /* =========================
@@ -436,7 +387,6 @@ body {
 ========================= */
 
 .message {
-
     min-height: 60px;
 
     margin-top: 18px;
@@ -446,9 +396,6 @@ body {
     line-height: 1.6;
 
     color: #806c68;
-
-    transition:
-        opacity 0.4s ease;
 }
 
 /* =========================
@@ -456,7 +403,6 @@ body {
 ========================= */
 
 .final-message {
-
     position: absolute;
 
     inset: 0;
@@ -468,8 +414,7 @@ body {
 
     padding: 35px;
 
-    background:
-        rgba(255, 251, 249, 0.95);
+    background: rgba(255, 251, 249, 0.94);
 
     opacity: 0;
 
@@ -477,38 +422,29 @@ body {
 
     transition:
         opacity 1.5s ease;
-
-    z-index: 50;
 }
 
 .final-message.visible {
-
     opacity: 1;
 }
 
 .final-content {
-
     max-width: 570px;
 
-    transform:
-        translateY(25px);
+    transform: translateY(25px);
 
     transition:
         transform 1.5s ease;
 }
 
 .final-message.visible .final-content {
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
 .final-content h2 {
-
     margin: 0 0 22px;
 
-    font-size:
-        clamp(24px, 5vw, 34px);
+    font-size: clamp(24px, 5vw, 34px);
 
     font-weight: normal;
 
@@ -516,11 +452,9 @@ body {
 }
 
 .final-content p {
-
     margin: 7px 0;
 
-    font-size:
-        clamp(16px, 3vw, 19px);
+    font-size: clamp(16px, 3vw, 19px);
 
     line-height: 1.7;
 
@@ -528,13 +462,11 @@ body {
 }
 
 .heart-final {
-
     font-size: 30px;
 
     margin-top: 18px;
 
-    animation:
-        heartbeat 1.5s infinite;
+    animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
@@ -553,18 +485,15 @@ body {
 ========================= */
 
 .reset {
-
     margin-top: 12px;
 
     padding: 11px 23px;
 
     border-radius: 30px;
 
-    border:
-        1px solid #ddc8c5;
+    border: 1px solid #ddc8c5;
 
-    background:
-        rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.8);
 
     color: #765c58;
 
@@ -577,23 +506,12 @@ body {
     transition:
         background 0.3s ease,
         transform 0.2s ease;
-
-    -webkit-tap-highlight-color: transparent;
 }
 
 .reset:hover {
+    background: #fff5f3;
 
-    background:
-        #fff5f3;
-
-    transform:
-        translateY(-2px);
-}
-
-.reset:active {
-
-    transform:
-        translateY(0);
+    transform: translateY(-2px);
 }
 
 /* =========================
@@ -603,140 +521,92 @@ body {
 @media (max-width: 600px) {
 
     .container {
-
-        padding:
-            25px 12px;
+        padding: 25px 12px;
     }
 
     .garden {
-
         height: 450px;
 
-        border-radius:
-            25px;
+        border-radius: 25px;
     }
 
     .flower {
-
-        transform:
-            scale(0.75);
+        transform: scale(0.75);
     }
 
     .flower:hover {
-
-        transform:
-            scale(0.75);
+        transform: scale(0.78);
     }
 
     .flower1 {
-
         left: -2%;
     }
 
     .flower2 {
-
         left: 22%;
     }
 
     .flower3 {
-
         right: 22%;
     }
 
     .flower4 {
-
         right: -2%;
     }
 
     .final-message {
-
-        padding:
-            25px 18px;
+        padding: 25px 18px;
     }
 
     .final-content p {
-
-        line-height:
-            1.6;
+        line-height: 1.6;
     }
 
     .photo-memory {
-
-        width:
-            60%;
+        width: 60%;
     }
 
     .photo-memory img {
-
-        height:
-            190px;
+        height: 190px;
     }
 }
-
-/* =========================
-   CELULARES PEQUEÑOS
-========================= */
 
 @media (max-width: 400px) {
 
     .garden {
-
-        height:
-            430px;
+        height: 430px;
     }
 
     .flower {
-
-        transform:
-            scale(0.62);
-    }
-
-    .flower:hover {
-
-        transform:
-            scale(0.62);
+        transform: scale(0.62);
     }
 
     .flower1 {
-
-        left:
-            -8%;
+        left: -8%;
     }
 
     .flower2 {
-
-        left:
-            15%;
+        left: 15%;
     }
 
     .flower3 {
-
-        right:
-            15%;
+        right: 15%;
     }
 
     .flower4 {
-
-        right:
-            -8%;
+        right: -8%;
     }
 
     .message {
-
-        font-size:
-            15px;
+        font-size: 15px;
     }
 
     .photo-memory {
-
-        width:
-            65%;
+        width: 65%;
     }
 
     .photo-memory img {
-
-        height:
-            170px;
+        height: 170px;
     }
 }
 
@@ -757,14 +627,8 @@ body {
 
     <div class="garden" id="garden">
 
-        <!-- =========================
-             TULIPÁN ROSADO
-        ========================== -->
-
-        <div
-            class="flower flower1"
-            data-flower="tulip"
-        >
+        <!-- TULIPÁN ROSADO -->
+        <div class="flower flower1" data-flower="tulip">
 
             <div class="stem"></div>
 
@@ -774,15 +638,8 @@ body {
 
         </div>
 
-
-        <!-- =========================
-             GERBERA
-        ========================== -->
-
-        <div
-            class="flower flower2"
-            data-flower="gerbera"
-        >
+        <!-- GERBERA -->
+        <div class="flower flower2" data-flower="gerbera">
 
             <div class="stem"></div>
 
@@ -796,15 +653,8 @@ body {
 
         </div>
 
-
-        <!-- =========================
-             TULIPÁN ROJO
-        ========================== -->
-
-        <div
-            class="flower flower3"
-            data-flower="tulip"
-        >
+        <!-- TULIPÁN ROJO -->
+        <div class="flower flower3" data-flower="tulip">
 
             <div class="stem"></div>
 
@@ -812,20 +662,13 @@ body {
 
             <div
                 class="tulip-head"
-                style="background:#bd3453;"
-            ></div>
+                style="background:#bd3453;">
+            </div>
 
         </div>
 
-
-        <!-- =========================
-             GERBERA ROSADA
-        ========================== -->
-
-        <div
-            class="flower flower4"
-            data-flower="gerbera"
-        >
+        <!-- GERBERA -->
+        <div class="flower flower4" data-flower="gerbera">
 
             <div class="stem"></div>
 
@@ -851,18 +694,14 @@ body {
 
 
         <!-- =========================
-             FOTO
+             FOTO DE RECUERDO
         ========================== -->
 
-        <div
-            class="photo-memory"
-            id="photoMemory"
-        >
+        <div class="photo-memory" id="photoMemory">
 
             <img
-                src="./Fotos/foto1.jpeg"
+                src="Fotos/foto1.jpeg"
                 alt="Nuestro recuerdo"
-                loading="eager"
             >
 
             <div class="photo-caption">
@@ -876,16 +715,11 @@ body {
              MENSAJE FINAL
         ========================== -->
 
-        <div
-            class="final-message"
-            id="finalMessage"
-        >
+        <div class="final-message" id="finalMessage">
 
             <div class="final-content">
 
-                <h2>
-                    Para ti ❤️
-                </h2>
+                <h2>Para ti ❤️</h2>
 
                 <p>
                     Entre tantas flores, siempre habría elegido
@@ -916,30 +750,13 @@ body {
 
     </div>
 
-
-    <!-- =========================
-         MENSAJE
-    ========================== -->
-
-    <div
-        class="message"
-        id="message"
-    >
+    <div class="message" id="message">
 
         Toca las flores para hacerlas florecer. 🌷
 
     </div>
 
-
-    <!-- =========================
-         BOTÓN
-    ========================== -->
-
-    <button
-        class="reset"
-        id="reset"
-        type="button"
-    >
+    <button class="reset" id="reset">
 
         Volver a ver el jardín
 
@@ -949,13 +766,6 @@ body {
 
 
 <script>
-
-/* =========================
-   ELEMENTOS
-========================= */
-
-const garden =
-    document.getElementById("garden");
 
 const flowers =
     document.querySelectorAll(".flower");
@@ -972,11 +782,6 @@ const photoMemory =
 const resetButton =
     document.getElementById("reset");
 
-
-/* =========================
-   ESTADO
-========================= */
-
 let touchedFlowers = 0;
 
 let completed = false;
@@ -991,17 +796,17 @@ function createHeart(flower) {
     const heart =
         document.createElement("div");
 
-    heart.className =
-        "heart";
+    heart.className = "heart";
 
-    heart.textContent =
-        "♥";
+    heart.textContent = "♥";
 
     const rect =
         flower.getBoundingClientRect();
 
     const gardenRect =
-        garden.getBoundingClientRect();
+        document
+        .getElementById("garden")
+        .getBoundingClientRect();
 
     heart.style.left =
         `${rect.left - gardenRect.left + rect.width / 2}px`;
@@ -1009,7 +814,9 @@ function createHeart(flower) {
     heart.style.top =
         `${rect.top - gardenRect.top + 50}px`;
 
-    garden.appendChild(heart);
+    document
+        .getElementById("garden")
+        .appendChild(heart);
 
     setTimeout(() => {
 
@@ -1020,14 +827,12 @@ function createHeart(flower) {
 
 
 /* =========================
-   TOCAR FLORES
+   INTERACCIÓN
 ========================= */
 
 flowers.forEach((flower, index) => {
 
     flower.addEventListener("click", () => {
-
-        /* Evitar repetir */
 
         if (
             flower.dataset.touched === "true" ||
@@ -1036,27 +841,17 @@ flowers.forEach((flower, index) => {
             return;
         }
 
-
-        /* Registrar flor */
-
-        flower.dataset.touched =
-            "true";
+        flower.dataset.touched = "true";
 
         touchedFlowers++;
 
-
         /* Animación */
 
-        flower.classList.remove(
-            "touched"
-        );
+        flower.classList.remove("touched");
 
         void flower.offsetWidth;
 
-        flower.classList.add(
-            "touched"
-        );
-
+        flower.classList.add("touched");
 
         /* Corazón */
 
@@ -1064,56 +859,35 @@ flowers.forEach((flower, index) => {
 
 
         /* =========================
-           PRIMERA FOTO
+           MOSTRAR FOTO
         ========================== */
 
         if (index === 0) {
 
-            photoMemory.classList.add(
-                "visible"
-            );
+            photoMemory.classList.add("visible");
 
             message.textContent =
                 "Un pequeño recuerdo de nosotros... ❤️";
 
         }
 
+        else if (touchedFlowers === 2) {
 
-        /* =========================
-           SEGUNDA FLOR
-        ========================== */
-
-        else if (
-            touchedFlowers === 2
-        ) {
+            photoMemory.classList.remove("visible");
 
             message.textContent =
                 "Cada flor guarda un pequeño detalle para ti. ❤️";
 
         }
 
-
-        /* =========================
-           TERCERA FLOR
-        ========================== */
-
-        else if (
-            touchedFlowers === 3
-        ) {
+        else if (touchedFlowers === 3) {
 
             message.textContent =
-                "Ya casi descubrimos el jardín completo... 🌷";
+                "Ya casi descubrimos el jardín completo...";
 
         }
 
-
-        /* =========================
-           CUARTA FLOR
-        ========================== */
-
-        else if (
-            touchedFlowers === flowers.length
-        ) {
+        else if (touchedFlowers === flowers.length) {
 
             finishGarden();
 
@@ -1130,43 +904,33 @@ flowers.forEach((flower, index) => {
 
 function finishGarden() {
 
-    completed =
-        true;
+    completed = true;
 
+    photoMemory.classList.remove("visible");
 
     message.textContent =
         "El jardín floreció... 🌷❤️";
 
-
-    /* Animación final */
-
     setTimeout(() => {
 
-        flowers.forEach(
-            (flower, index) => {
+        flowers.forEach((flower, index) => {
 
-                setTimeout(() => {
+            setTimeout(() => {
 
-                    flower.style.transform =
-                        "translateY(-8px) scale(1.04)";
+                flower.style.transform =
+                    "translateY(-8px) scale(1.04)";
 
-                }, index * 120);
+            }, index * 120);
 
-            }
-        );
+        });
 
     }, 300);
 
-
-    /* Mostrar mensaje */
-
     setTimeout(() => {
 
-        finalMessage.classList.add(
-            "visible"
-        );
+        finalMessage.classList.add("visible");
 
-    }, 1600);
+    }, 1300);
 
 }
 
@@ -1175,48 +939,30 @@ function finishGarden() {
    REINICIAR
 ========================= */
 
-resetButton.addEventListener(
-    "click",
-    () => {
+resetButton.addEventListener("click", () => {
 
-        touchedFlowers =
-            0;
+    touchedFlowers = 0;
 
-        completed =
-            false;
+    completed = false;
 
+    flowers.forEach((flower) => {
 
-        flowers.forEach(
-            (flower) => {
+        flower.dataset.touched = "false";
 
-                flower.dataset.touched =
-                    "false";
+        flower.classList.remove("touched");
 
-                flower.classList.remove(
-                    "touched"
-                );
+        flower.style.transform = "";
 
-                flower.style.transform =
-                    "";
+    });
 
-            }
-        );
+    photoMemory.classList.remove("visible");
 
+    finalMessage.classList.remove("visible");
 
-        photoMemory.classList.remove(
-            "visible"
-        );
+    message.textContent =
+        "Toca las flores para hacerlas florecer. 🌷";
 
-        finalMessage.classList.remove(
-            "visible"
-        );
-
-
-        message.textContent =
-            "Toca las flores para hacerlas florecer. 🌷";
-
-    }
-);
+});
 
 </script>
 
