@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Un pequeño jardín para ti 🌷</title>
+<title>Un jardín para ti ❤️</title>
 
 <style>
 
@@ -13,359 +13,338 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: "Georgia", serif;
+    background: linear-gradient(
+        180deg,
+        #fff5f7 0%,
+        #fde8ee 50%,
+        #f9dce5 100%
+    );
+    overflow-x: hidden;
 }
 
 body {
-    margin: 0;
     min-height: 100vh;
-    overflow-x: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            #fffdfb 0%,
-            #fdf6f4 45%,
-            #f8eeee 100%
-        );
-
-    font-family: Georgia, "Times New Roman", serif;
-    color: #514541;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* =========================
-   CONTENEDOR
-========================= */
+/* CONTENEDOR PRINCIPAL */
 
 .container {
     width: 100%;
     max-width: 900px;
-    padding: 30px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
     text-align: center;
 }
 
-/* =========================
-   TÍTULO
-========================= */
+/* TITULO */
 
-.title {
-    margin: 0;
-
-    font-size: clamp(28px, 6vw, 42px);
-
+h1 {
+    margin: 0 0 8px;
+    color: #8d3b55;
+    font-size: clamp(28px, 6vw, 46px);
     font-weight: normal;
-
-    color: #604a4a;
-
-    letter-spacing: 0.2px;
 }
 
 .subtitle {
-    margin: 10px 0 25px;
-
-    color: #9b8581;
-
-    font-size: 15px;
-
-    line-height: 1.5;
+    margin: 0 0 15px;
+    color: #a45b70;
+    font-size: clamp(15px, 3vw, 19px);
 }
 
-/* =========================
-   JARDÍN
-========================= */
+/* JARDÍN */
 
 .garden {
     position: relative;
-
-    width: 100%;
-    max-width: 760px;
-
-    height: 420px;
-
-    margin: auto;
-
+    width: min(850px, 95vw);
+    height: min(600px, 65vh);
+    min-height: 430px;
+    margin: 5px auto 15px;
     border-radius: 30px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fffdfc 0%,
-            #fffaf8 65%,
-            #eef2e8 65%,
-            #dce6d5 100%
-        );
-
     overflow: hidden;
 
-    box-shadow:
-        0 10px 40px rgba(110, 75, 70, 0.08);
+    background:
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255,255,255,0.7) 0 3px,
+            transparent 4px
+        ),
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255,255,255,0.6) 0 3px,
+            transparent 4px
+        ),
+        linear-gradient(
+            180deg,
+            #fff0f4,
+            #f9dce7
+        );
 
-    border: 1px solid rgba(160, 130, 125, 0.12);
+    box-shadow:
+        0 20px 50px rgba(100, 40, 60, 0.18);
 }
 
-/* =========================
-   FLORES
-========================= */
+/* PASTO */
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 22%;
+    background: linear-gradient(
+        180deg,
+        #d7e9c8,
+        #bdd9a7
+    );
+    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+}
+
+/* FLORES */
 
 .flower {
     position: absolute;
-
-    width: 120px;
-    height: 230px;
-
-    bottom: 45px;
-
+    width: 100px;
+    height: 190px;
     cursor: pointer;
-
-    transform-origin: bottom center;
-
-    transition:
-        transform 0.5s ease,
-        opacity 0.5s ease;
-
+    z-index: 10;
+    transition: transform 0.4s ease;
     touch-action: manipulation;
-
-    -webkit-tap-highlight-color: transparent;
-
-    z-index: 5;
 }
 
 .flower:hover {
-    transform: scale(1.04);
+    transform: translateY(-5px);
 }
 
-.flower1 {
-    left: 8%;
+/* POSICIONES */
+
+.flower:nth-child(1) {
+    left: 10%;
+    bottom: 12%;
 }
 
-.flower2 {
-    left: 29%;
+.flower:nth-child(2) {
+    left: 34%;
+    bottom: 7%;
 }
 
-.flower3 {
-    right: 29%;
+.flower:nth-child(3) {
+    right: 31%;
+    bottom: 10%;
 }
 
-.flower4 {
+.flower:nth-child(4) {
     right: 8%;
+    bottom: 14%;
 }
 
-/* =========================
-   TALLOS
-========================= */
+/* TALLO */
 
 .stem {
     position: absolute;
-
-    width: 7px;
-    height: 155px;
-
-    left: 56px;
     bottom: 0;
-
-    background: #78956f;
-
+    left: 47px;
+    width: 7px;
+    height: 125px;
+    background: linear-gradient(
+        90deg,
+        #5d9a59,
+        #83b96f
+    );
     border-radius: 10px;
 }
 
+/* HOJA */
+
 .leaf {
     position: absolute;
-
     width: 45px;
     height: 20px;
-
-    background: #8ca982;
-
+    background: #76ad67;
     border-radius: 100% 0 100% 0;
-
-    left: 58px;
-    bottom: 65px;
-
-    transform: rotate(-25deg);
+    bottom: 55px;
 }
 
-/* =========================
-   TULIPÁN
-========================= */
+.leaf.left {
+    left: 5px;
+    transform: rotate(25deg);
+}
+
+.leaf.right {
+    right: 3px;
+    transform: scaleX(-1) rotate(25deg);
+}
+
+/* TULIPÁN */
 
 .tulip-head {
     position: absolute;
-
-    width: 70px;
-    height: 75px;
-
-    left: 25px;
-    bottom: 145px;
-
-    background: #d94d69;
-
-    border-radius:
-        45% 45% 50% 50% /
-        65% 65% 35% 35%;
-
+    left: 18px;
+    top: 10px;
+    width: 65px;
+    height: 65px;
     z-index: 2;
-
-    box-shadow:
-        inset -10px -5px 15px rgba(120, 30, 50, 0.12);
 }
 
-.tulip-head::before {
-    content: "";
-
+.tulip-petal {
     position: absolute;
-
-    width: 30px;
-    height: 65px;
-
-    left: 5px;
-    top: -3px;
-
-    background: #ed7890;
-
-    border-radius: 50%;
-
-    transform: rotate(-18deg);
+    width: 38px;
+    height: 52px;
+    border-radius: 50% 50% 40% 40%;
+    background: #ef6f91;
 }
 
-.tulip-head::after {
-    content: "";
-
-    position: absolute;
-
-    width: 30px;
-    height: 65px;
-
-    right: 5px;
-    top: -3px;
-
-    background: #c93657;
-
-    border-radius: 50%;
-
-    transform: rotate(18deg);
+.tulip-petal:nth-child(1) {
+    left: 0;
+    top: 12px;
+    transform: rotate(-20deg);
 }
 
-/* =========================
-   GERBERA
-========================= */
+.tulip-petal:nth-child(2) {
+    left: 14px;
+    top: 0;
+    background: #f47fa0;
+}
+
+.tulip-petal:nth-child(3) {
+    right: 0;
+    top: 12px;
+    transform: rotate(20deg);
+    background: #df5478;
+}
+
+/* TULIPÁN ROJO */
+
+.red .tulip-petal:nth-child(1) {
+    background: #d94a61;
+}
+
+.red .tulip-petal:nth-child(2) {
+    background: #ef6479;
+}
+
+.red .tulip-petal:nth-child(3) {
+    background: #c93650;
+}
+
+/* GERBERA */
 
 .gerbera-head {
     position: absolute;
-
-    width: 88px;
-    height: 88px;
-
-    left: 16px;
-    bottom: 138px;
-
-    border-radius: 50%;
-
-    background:
-        repeating-conic-gradient(
-            from 0deg,
-            #f19a83 0deg 12deg,
-            #f7b09d 12deg 24deg
-        );
-
+    left: 10px;
+    top: 5px;
+    width: 80px;
+    height: 80px;
     z-index: 2;
-
-    box-shadow:
-        0 3px 12px rgba(130, 70, 60, 0.12);
 }
 
-.gerbera-center {
+.petal {
     position: absolute;
-
-    width: 34px;
-    height: 34px;
-
-    left: 27px;
-    top: 27px;
-
+    left: 30px;
+    top: 5px;
+    width: 20px;
+    height: 35px;
     border-radius: 50%;
-
-    background: #d88b4c;
-
-    border: 5px solid #e6a969;
-
-    z-index: 3;
+    background: #f58aab;
+    transform-origin: 10px 35px;
 }
 
-/* =========================
-   ANIMACIÓN DE FLORES
-========================= */
+.petal:nth-child(1)  { transform: rotate(0deg); }
+.petal:nth-child(2)  { transform: rotate(30deg); }
+.petal:nth-child(3)  { transform: rotate(60deg); }
+.petal:nth-child(4)  { transform: rotate(90deg); }
+.petal:nth-child(5)  { transform: rotate(120deg); }
+.petal:nth-child(6)  { transform: rotate(150deg); }
+.petal:nth-child(7)  { transform: rotate(180deg); }
+.petal:nth-child(8)  { transform: rotate(210deg); }
+.petal:nth-child(9)  { transform: rotate(240deg); }
+.petal:nth-child(10) { transform: rotate(270deg); }
+.petal:nth-child(11) { transform: rotate(300deg); }
+.petal:nth-child(12) { transform: rotate(330deg); }
+
+.center {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f6c453;
+    z-index: 5;
+}
+
+/* ANIMACIÓN AL TOCAR */
 
 .flower.touched {
-    animation: flowerTouch 0.7s ease;
+    animation: sway 0.8s ease;
 }
 
-@keyframes flowerTouch {
+@keyframes sway {
 
     0% {
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
     }
 
-    30% {
-        transform: rotate(-7deg) scale(1.05);
+    25% {
+        transform: rotate(-8deg);
     }
 
-    60% {
-        transform: rotate(7deg) scale(1.05);
+    50% {
+        transform: rotate(8deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
     }
 
     100% {
-        transform: rotate(0deg) scale(1);
+        transform: rotate(0deg);
     }
 }
 
-/* =========================
-   CORAZONES
-========================= */
+/* CORAZONES */
 
 .heart {
     position: absolute;
-
+    font-size: 24px;
     pointer-events: none;
-
-    font-size: 18px;
-
-    animation:
-        heartFloat 1.4s ease forwards;
-
-    z-index: 30;
+    z-index: 50;
+    animation: heartFloat 1.5s ease-out forwards;
 }
 
 @keyframes heartFloat {
 
     0% {
         opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(0.7);
+        transform: translate(0, 0) scale(0.7);
     }
 
     100% {
         opacity: 0;
-
-        transform:
-            translateY(-90px)
-            scale(1.2);
+        transform: translate(
+            var(--x),
+            -100px
+        ) scale(1.4);
     }
 }
 
-/* =========================
-   FOTO
-========================= */
+/* FOTO */
 
 .photo-memory {
     position: absolute;
-
     left: 50%;
     top: 50%;
 
@@ -378,7 +357,7 @@ body {
     border-radius: 5px;
 
     box-shadow:
-        0 15px 40px rgba(70, 45, 45, 0.25);
+        0 15px 40px rgba(70,45,45,0.25);
 
     transform:
         translate(-50%, -50%)
@@ -397,7 +376,6 @@ body {
 }
 
 .photo-memory.visible {
-
     opacity: 1;
 
     transform:
@@ -407,11 +385,9 @@ body {
 }
 
 .photo-memory img {
-
     display: block;
 
     width: 100%;
-
     height: 230px;
 
     object-fit: cover;
@@ -422,322 +398,173 @@ body {
 }
 
 .photo-caption {
+    margin-top: 12px;
 
-    margin-top: 10px;
-
-    color: #806c68;
-
-    font-size: 14px;
-
-    line-height: 1.4;
-}
-
-/* =========================
-   MENSAJE
-========================= */
-
-.message {
-
-    min-height: 60px;
-
-    margin-top: 18px;
+    color: #8d3b55;
 
     font-size: 17px;
 
-    line-height: 1.6;
+    font-style: italic;
+}
 
-    color: #806c68;
+/* MENSAJE */
+
+.message {
+    min-height: 30px;
+    margin: 5px 10px 10px;
+
+    color: #8d3b55;
+
+    font-size: clamp(15px, 3vw, 18px);
 
     transition:
         opacity 0.4s ease;
 }
 
-/* =========================
-   MENSAJE FINAL
-========================= */
+/* MENSAJE FINAL */
 
 .final-message {
-
     position: absolute;
 
-    inset: 0;
+    left: 50%;
+    top: 50%;
 
-    display: flex;
+    width: 85%;
+    max-width: 650px;
 
-    justify-content: center;
-    align-items: center;
+    padding: 30px 25px;
 
-    padding: 35px;
+    background: rgba(255,255,255,0.94);
 
-    background:
-        rgba(255, 251, 249, 0.95);
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(80,40,50,0.2);
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.8);
 
     opacity: 0;
 
     pointer-events: none;
 
     transition:
-        opacity 1.5s ease;
+        opacity 1s ease,
+        transform 1s ease;
 
-    z-index: 50;
+    z-index: 100;
 }
 
-.final-message.visible {
-
+.final-message.show {
     opacity: 1;
-}
-
-.final-content {
-
-    max-width: 570px;
 
     transform:
-        translateY(25px);
-
-    transition:
-        transform 1.5s ease;
+        translate(-50%, -50%)
+        scale(1);
 }
 
-.final-message.visible .final-content {
+.final-message p {
+    margin: 0;
 
-    transform:
-        translateY(0);
+    color: #7c334b;
+
+    font-size: clamp(18px, 3.5vw, 24px);
+
+    line-height: 1.6;
 }
 
-.final-content h2 {
+/* BOTÓN */
 
-    margin: 0 0 22px;
+button {
+    border: none;
 
-    font-size:
-        clamp(24px, 5vw, 34px);
+    padding: 12px 22px;
 
-    font-weight: normal;
+    border-radius: 25px;
 
-    color: #9b465a;
-}
+    background: #b84d6c;
 
-.final-content p {
-
-    margin: 7px 0;
-
-    font-size:
-        clamp(16px, 3vw, 19px);
-
-    line-height: 1.7;
-
-    color: #665653;
-}
-
-.heart-final {
-
-    font-size: 30px;
-
-    margin-top: 18px;
-
-    animation:
-        heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.18);
-    }
-}
-
-/* =========================
-   BOTÓN
-========================= */
-
-.reset {
-
-    margin-top: 12px;
-
-    padding: 11px 23px;
-
-    border-radius: 30px;
-
-    border:
-        1px solid #ddc8c5;
-
-    background:
-        rgba(255,255,255,0.8);
-
-    color: #765c58;
+    color: white;
 
     font-family: inherit;
 
-    font-size: 14px;
+    font-size: 16px;
 
     cursor: pointer;
 
+    box-shadow:
+        0 7px 20px rgba(100,40,60,0.2);
+
     transition:
-        background 0.3s ease,
-        transform 0.2s ease;
-
-    -webkit-tap-highlight-color: transparent;
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
-.reset:hover {
+button:hover {
+    transform: translateY(-2px);
 
-    background:
-        #fff5f3;
-
-    transform:
-        translateY(-2px);
+    background: #a53e5d;
 }
 
-.reset:active {
-
-    transform:
-        translateY(0);
+button:active {
+    transform: scale(0.96);
 }
 
-/* =========================
-   CELULAR
-========================= */
+/* MÓVIL */
 
 @media (max-width: 600px) {
 
     .container {
-
-        padding:
-            25px 12px;
+        padding: 18px 10px;
     }
 
     .garden {
-
-        height: 450px;
-
-        border-radius:
-            25px;
+        width: 96vw;
+        height: 58vh;
+        min-height: 400px;
+        border-radius: 22px;
     }
 
     .flower {
-
-        transform:
-            scale(0.75);
+        transform: scale(0.8);
     }
 
     .flower:hover {
-
-        transform:
-            scale(0.75);
+        transform: scale(0.8);
     }
 
-    .flower1 {
-
-        left: -2%;
+    .flower:nth-child(1) {
+        left: 1%;
+        bottom: 10%;
     }
 
-    .flower2 {
-
-        left: 22%;
+    .flower:nth-child(2) {
+        left: 25%;
+        bottom: 5%;
     }
 
-    .flower3 {
-
-        right: 22%;
+    .flower:nth-child(3) {
+        right: 24%;
+        bottom: 7%;
     }
 
-    .flower4 {
+    .flower:nth-child(4) {
+        right: 0%;
+        bottom: 12%;
+    }
 
-        right: -2%;
+    .photo-memory {
+        width: min(250px, 72%);
+    }
+
+    .photo-memory img {
+        height: 210px;
     }
 
     .final-message {
-
-        padding:
-            25px 18px;
-    }
-
-    .final-content p {
-
-        line-height:
-            1.6;
-    }
-
-    .photo-memory {
-
-        width:
-            60%;
-    }
-
-    .photo-memory img {
-
-        height:
-            190px;
-    }
-}
-
-/* =========================
-   CELULARES PEQUEÑOS
-========================= */
-
-@media (max-width: 400px) {
-
-    .garden {
-
-        height:
-            430px;
-    }
-
-    .flower {
-
-        transform:
-            scale(0.62);
-    }
-
-    .flower:hover {
-
-        transform:
-            scale(0.62);
-    }
-
-    .flower1 {
-
-        left:
-            -8%;
-    }
-
-    .flower2 {
-
-        left:
-            15%;
-    }
-
-    .flower3 {
-
-        right:
-            15%;
-    }
-
-    .flower4 {
-
-        right:
-            -8%;
-    }
-
-    .message {
-
-        font-size:
-            15px;
-    }
-
-    .photo-memory {
-
-        width:
-            65%;
-    }
-
-    .photo-memory img {
-
-        height:
-            170px;
+        width: 90%;
+        padding: 25px 18px;
     }
 }
 
@@ -746,119 +573,25 @@ body {
 
 <body>
 
-<main class="container">
+<div class="container">
 
-    <h1 class="title">
-        Un pequeño jardín para ti 🌷
-    </h1>
+    <h1>Un jardín para ti ❤️</h1>
 
     <p class="subtitle">
-        Toca las flores y descubre lo que preparé para ti...
+        Toca cada flor y descubre una pequeña sorpresa...
     </p>
+
 
     <div class="garden" id="garden">
 
-        <!-- =========================
-             TULIPÁN ROSADO
-        ========================== -->
+        <!-- PASTO -->
 
-        <div
-            class="flower flower1"
-            data-flower="tulip"
-        >
-
-            <div class="stem"></div>
-
-            <div class="leaf"></div>
-
-            <div class="tulip-head"></div>
-
-        </div>
+        <div class="ground"></div>
 
 
-        <!-- =========================
-             GERBERA
-        ========================== -->
+        <!-- FOTO -->
 
-        <div
-            class="flower flower2"
-            data-flower="gerbera"
-        >
-
-            <div class="stem"></div>
-
-            <div class="leaf"></div>
-
-            <div class="gerbera-head">
-
-                <div class="gerbera-center"></div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             TULIPÁN ROJO
-        ========================== -->
-
-        <div
-            class="flower flower3"
-            data-flower="tulip"
-        >
-
-            <div class="stem"></div>
-
-            <div class="leaf"></div>
-
-            <div
-                class="tulip-head"
-                style="background:#bd3453;"
-            ></div>
-
-        </div>
-
-
-        <!-- =========================
-             GERBERA ROSADA
-        ========================== -->
-
-        <div
-            class="flower flower4"
-            data-flower="gerbera"
-        >
-
-            <div class="stem"></div>
-
-            <div class="leaf"></div>
-
-            <div
-                class="gerbera-head"
-                style="
-                    background:
-                    repeating-conic-gradient(
-                        from 0deg,
-                        #e98b9c 0deg 12deg,
-                        #f3a9b5 12deg 24deg
-                    );
-                "
-            >
-
-                <div class="gerbera-center"></div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             FOTO
-        ========================== -->
-
-        <div
-            class="photo-memory"
-            id="photoMemory"
-        >
+        <div class="photo-memory" id="photoMemory">
 
             <img
                 src="./Fotos/foto1.jpeg"
@@ -873,162 +606,223 @@ body {
         </div>
 
 
-        <!-- =========================
-             MENSAJE FINAL
-        ========================== -->
+        <!-- FLOR 1: TULIPÁN ROSADO -->
 
-        <div
-            class="final-message"
-            id="finalMessage"
-        >
+        <div class="flower" data-touched="false">
 
-            <div class="final-content">
+            <div class="tulip-head">
 
-                <h2>
-                    Para ti ❤️
-                </h2>
-
-                <p>
-                    Entre tantas flores, siempre habría elegido
-                    encontrarte a ti.
-                </p>
-
-                <p>
-                    Porque desde que llegaste a mi vida,
-                    mis días tienen un poquito más de color,
-                </p>
-
-                <p>
-                    mis sonrisas duran un poquito más,
-                </p>
-
-                <p>
-                    y mi corazón encontró un lugar
-                    donde quiere quedarse.
-                </p>
-
-                <div class="heart-final">
-                    ❤️
-                </div>
+                <div class="tulip-petal"></div>
+                <div class="tulip-petal"></div>
+                <div class="tulip-petal"></div>
 
             </div>
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+        </div>
+
+
+        <!-- FLOR 2: GERBERA -->
+
+        <div class="flower" data-touched="false">
+
+            <div class="gerbera-head">
+
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+
+                <div class="center"></div>
+
+            </div>
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+        </div>
+
+
+        <!-- FLOR 3: TULIPÁN ROJO -->
+
+        <div class="flower red" data-touched="false">
+
+            <div class="tulip-head">
+
+                <div class="tulip-petal"></div>
+                <div class="tulip-petal"></div>
+                <div class="tulip-petal"></div>
+
+            </div>
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+        </div>
+
+
+        <!-- FLOR 4: GERBERA -->
+
+        <div class="flower" data-touched="false">
+
+            <div class="gerbera-head">
+
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+
+                <div class="center"></div>
+
+            </div>
+
+            <div class="stem"></div>
+
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+
+        </div>
+
+
+        <!-- MENSAJE FINAL -->
+
+        <div class="final-message" id="finalMessage">
+
+            <p>
+                Entre tantas flores, siempre habría elegido encontrarte a ti.
+                <br><br>
+                Porque desde que llegaste a mi vida, mis días tienen un poquito más de color,
+                mis sonrisas duran un poquito más,
+                y mi corazón encontró un lugar donde quiere quedarse. ❤️
+            </p>
 
         </div>
 
     </div>
 
 
-    <!-- =========================
-         MENSAJE
-    ========================== -->
+    <!-- MENSAJE -->
 
-    <div
-        class="message"
-        id="message"
-    >
-
-        Toca las flores para hacerlas florecer. 🌷
-
+    <div class="message" id="message">
+        Toca cada flor para descubrir una sorpresa... ❤️
     </div>
 
 
-    <!-- =========================
-         BOTÓN
-    ========================== -->
+    <!-- BOTÓN -->
 
-    <button
-        class="reset"
-        id="reset"
-        type="button"
-    >
-
-        Volver a ver el jardín
-
+    <button type="button" id="reset">
+        Volver a empezar 🌷
     </button>
 
-</main>
+</div>
 
 
 <script>
 
-/* =========================
-   ELEMENTOS
-========================= */
-
-const garden =
-    document.getElementById("garden");
-
-const flowers =
-    document.querySelectorAll(".flower");
-
-const message =
-    document.getElementById("message");
-
-const finalMessage =
-    document.getElementById("finalMessage");
-
-const photoMemory =
-    document.getElementById("photoMemory");
-
-const resetButton =
-    document.getElementById("reset");
-
-
-/* =========================
-   ESTADO
-========================= */
+const garden = document.getElementById("garden");
+const flowers = document.querySelectorAll(".flower");
+const message = document.getElementById("message");
+const finalMessage = document.getElementById("finalMessage");
+const photoMemory = document.getElementById("photoMemory");
+const resetButton = document.getElementById("reset");
 
 let touchedFlowers = 0;
-
 let completed = false;
 
 
-/* =========================
-   CREAR CORAZÓN
-========================= */
+/* CREAR CORAZÓN */
 
 function createHeart(flower) {
 
-    const heart =
-        document.createElement("div");
+    const heart = document.createElement("div");
 
-    heart.className =
-        "heart";
+    heart.className = "heart";
 
-    heart.textContent =
-        "♥";
+    heart.textContent = "❤️";
 
-    const rect =
-        flower.getBoundingClientRect();
+    const rect = flower.getBoundingClientRect();
+    const gardenRect = garden.getBoundingClientRect();
 
-    const gardenRect =
-        garden.getBoundingClientRect();
+    const x =
+        rect.left -
+        gardenRect.left +
+        rect.width / 2;
 
-    heart.style.left =
-        `${rect.left - gardenRect.left + rect.width / 2}px`;
+    const y =
+        rect.top -
+        gardenRect.top +
+        20;
 
-    heart.style.top =
-        `${rect.top - gardenRect.top + 50}px`;
+    heart.style.left = x + "px";
+    heart.style.top = y + "px";
+
+    heart.style.setProperty(
+        "--x",
+        ((Math.random() - 0.5) * 80) + "px"
+    );
 
     garden.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
-
-    }, 1400);
+    }, 1500);
 }
 
 
-/* =========================
-   TOCAR FLORES
-========================= */
+/* FINAL DEL JARDÍN */
+
+function finishGarden() {
+
+    completed = true;
+
+    message.textContent =
+        "Todas las flores tienen un pedacito de mi corazón... ❤️";
+
+    setTimeout(() => {
+
+        finalMessage.classList.add("show");
+
+    }, 800);
+}
+
+
+/* TOCAR FLORES */
 
 flowers.forEach((flower, index) => {
 
-    flower.addEventListener("click", () => {
+    flower.addEventListener("click", (event) => {
 
-        /* Evitar repetir */
+        /*
+        Evita que este mismo toque
+        sea interpretado también como
+        un toque de la pantalla.
+        */
+
+        event.stopPropagation();
 
         if (
             flower.dataset.touched === "true" ||
@@ -1037,82 +831,57 @@ flowers.forEach((flower, index) => {
             return;
         }
 
-
-        /* Registrar flor */
-
-        flower.dataset.touched =
-            "true";
+        flower.dataset.touched = "true";
 
         touchedFlowers++;
 
 
-        /* Animación */
+        /* ANIMACIÓN */
 
-        flower.classList.remove(
-            "touched"
-        );
+        flower.classList.remove("touched");
 
         void flower.offsetWidth;
 
-        flower.classList.add(
-            "touched"
-        );
+        flower.classList.add("touched");
 
 
-        /* Corazón */
+        /* CORAZÓN */
 
         createHeart(flower);
 
 
-        /* =========================
-           PRIMERA FOTO
-        ========================== */
+        /* PRIMERA FLOR → FOTO */
 
         if (index === 0) {
 
-            photoMemory.classList.add(
-                "visible"
-            );
+            photoMemory.classList.add("visible");
 
             message.textContent =
                 "Un pequeño recuerdo de nosotros... ❤️";
-
         }
 
 
-        /* =========================
-           SEGUNDA FLOR
-        ========================== */
+        /* MENSAJE SEGUNDA FLOR */
 
-        else if (
-            touchedFlowers === 2
-        ) {
+        if (touchedFlowers === 2) {
 
             message.textContent =
                 "Cada flor guarda un pequeño detalle para ti. ❤️";
-
         }
 
 
-        /* =========================
-           TERCERA FLOR
-        ========================== */
+        /* MENSAJE TERCERA FLOR */
 
-        else if (
-            touchedFlowers === 3
-        ) {
+        if (touchedFlowers === 3) {
 
             message.textContent =
                 "Ya casi descubrimos el jardín completo... 🌷";
-
         }
 
 
-        /* =========================
-           CUARTA FLOR
-        ========================== */
+        /* FINAL */
 
-        else if (
+        if (
             touchedFlowers === flowers.length
         ) {
 
@@ -1125,99 +894,57 @@ flowers.forEach((flower, index) => {
 });
 
 
-/* =========================
-   FINAL
-========================= */
+/*
+=================================================
+TOCAR LA PANTALLA → OCULTAR FOTO
+=================================================
+*/
 
-function finishGarden() {
+document.addEventListener("click", () => {
 
-    completed =
-        true;
+    if (
+        photoMemory.classList.contains("visible")
+    ) {
+
+        photoMemory.classList.remove("visible");
+
+        message.textContent =
+            "Sigue descubriendo el jardín... 🌷";
+
+    }
+
+});
+
+
+/* REINICIAR */
+
+resetButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    touchedFlowers = 0;
+
+    completed = false;
+
+
+    flowers.forEach((flower) => {
+
+        flower.dataset.touched = "false";
+
+        flower.classList.remove("touched");
+
+    });
+
+
+    photoMemory.classList.remove("visible");
+
+    finalMessage.classList.remove("show");
 
 
     message.textContent =
-        "El jardín floreció... 🌷❤️";
+        "Toca cada flor para descubrir una sorpresa... ❤️";
 
-
-    /* Animación final */
-
-    setTimeout(() => {
-
-        flowers.forEach(
-            (flower, index) => {
-
-                setTimeout(() => {
-
-                    flower.style.transform =
-                        "translateY(-8px) scale(1.04)";
-
-                }, index * 120);
-
-            }
-        );
-
-    }, 300);
-
-
-    /* Mostrar mensaje */
-
-    setTimeout(() => {
-
-        finalMessage.classList.add(
-            "visible"
-        );
-
-    }, 1600);
-
-}
-
-
-/* =========================
-   REINICIAR
-========================= */
-
-resetButton.addEventListener(
-    "click",
-    () => {
-
-        touchedFlowers =
-            0;
-
-        completed =
-            false;
-
-
-        flowers.forEach(
-            (flower) => {
-
-                flower.dataset.touched =
-                    "false";
-
-                flower.classList.remove(
-                    "touched"
-                );
-
-                flower.style.transform =
-                    "";
-
-            }
-        );
-
-
-        photoMemory.classList.remove(
-            "visible"
-        );
-
-        finalMessage.classList.remove(
-            "visible"
-        );
-
-
-        message.textContent =
-            "Toca las flores para hacerlas florecer. 🌷";
-
-    }
-);
+});
 
 </script>
 
